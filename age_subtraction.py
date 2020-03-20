@@ -1,5 +1,4 @@
 def year_day():
-
     d1, m1, y1 = [int(x) for x in input('plz enter the first date like this: \n1 6 1398 \n').split()]
     d2, m2, y2 = [int(x) for x in input('plz enter the second date like this: \n1 6 1398 \n').split()]
     if m1 == 12:
@@ -12,15 +11,17 @@ def year_day():
         totald1 = d1 + (m1 * 30) + (y1 * 365)
         totald2 = d2 + (m2 * 30) + (y2 * 365)
 
-    diff = totald1 - totald2
+    diff = totald1 - totald2  # total days
     if diff < 0:
         diff = diff * -1
 
     ydiff = diff // 365
-    x1 = diff - (ydiff*356)
+    x1 = diff - (ydiff * 356)  # total months full years excluded
     mdiff = (x1 // 29)
-    ddiff = x1 - (mdiff * 29)
+    ddiff = x1 - (mdiff * 29)  # total days full years and months excluded
 
-    print(ydiff,' years and ',mdiff,' months and ',ddiff,'days')
-    print('with total ',diff,' days!')
+    print(ydiff, ' years and ', mdiff, ' months and ', ddiff, 'days')
+    print('with total ', diff, ' days!')
+
+
 year_day()
